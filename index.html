@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shiraz Velber – Software Engineer</title>
+<meta name="description" content="Shiraz Velber, software engineer. Backend, full-stack, AI and cybersecurity projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#004AAD;      /* same blue as the CV */
+  --blue-soft:#E8EFFA;
+  --ink:#16202E;
+  --muted:#5A6577;
+  --rule:#D5DCE6;
+  --paper:#FFFFFF;
+  --safe:#1F7A4D; --warn:#B26A00; --bad:#B42318;
+}
+@media (prefers-color-scheme: dark){
+  :root{--blue:#6FA3F2;--blue-soft:#14233B;--ink:#E6EBF2;--muted:#9AA6B8;--rule:#2A3445;--paper:#0E1520;--safe:#4CC38A;--warn:#E3A13B;--bad:#F07064}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.6 Roboto,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"DM Sans",sans-serif;letter-spacing:-.02em;line-height:1.1}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-size:15px}
+nav .home{font-family:"DM Sans";font-weight:700;color:var(--ink);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none}
+nav ul a{color:var(--muted);text-decoration:none}
+nav ul a:hover{color:var(--blue)}
+
+/* hero */
+.hero{padding:72px 0 64px;border-bottom:1px solid var(--rule)}
+.hero .role{color:var(--blue);font-size:17px;margin-bottom:10px}
+.hero h1{font-size:clamp(56px,11vw,128px);color:var(--blue);font-weight:700;letter-spacing:-.045em;line-height:.95}
+.hero p.lead{max-width:620px;font-size:20px;margin-top:28px;color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-block;padding:12px 20px;border-radius:6px;font-weight:500;text-decoration:none;font-size:16px}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{filter:brightness(1.12)}
+.btn.ghost{border:1px solid var(--rule);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--blue);color:var(--blue)}
+
+section{padding:72px 0;border-bottom:1px solid var(--rule)}
+section > .wrap > h2{font-size:34px;margin-bottom:8px}
+section > .wrap > p.intro{color:var(--muted);max-width:620px;margin-bottom:40px}
+
+/* featured project */
+.feature{display:grid;grid-template-columns:1fr;gap:28px}
+.feature h3{font-size:30px}
+.meta{color:var(--muted);font-size:15px;margin:6px 0 16px}
+.feature p{max-width:680px}
+.pipe{background:var(--blue-soft);border-radius:10px;padding:28px 20px;overflow-x:auto}
+.pipe svg{display:block;width:100%;min-width:720px;height:auto}
+.pipe svg text{font-family:Roboto,sans-serif;fill:var(--ink)}
+.pipe svg .lbl{font-size:13px}
+.pipe svg .sm{font-size:11.5px;fill:var(--muted)}
+.pipe svg .box{fill:var(--paper);stroke:var(--rule)}
+.pipe svg .boxb{fill:var(--paper);stroke:var(--blue);stroke-width:1.5}
+.pipe svg .ln{stroke:var(--blue);stroke-width:1.5;fill:none}
+.pipe figcaption{font-size:14px;color:var(--muted);margin-top:14px;max-width:680px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:4px}
+.facts div{border-top:2px solid var(--blue);padding-top:10px;font-size:15px;color:var(--muted)}
+.facts b{display:block;font-family:"DM Sans";font-size:28px;color:var(--ink);letter-spacing:-.02em}
+
+/* project list */
+.list{margin-top:64px;border-top:1px solid var(--rule)}
+.proj{display:grid;grid-template-columns:240px 1fr;gap:32px;padding:32px 0;border-bottom:1px solid var(--rule)}
+.proj:last-child{border-bottom:none}
+.proj h3{font-size:22px}
+.proj .kind{color:var(--muted);font-size:15px;margin-top:6px}
+.proj p{max-width:640px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 12px}
+.stack span{font-size:13px;padding:3px 9px;border-radius:4px;background:var(--blue-soft);color:var(--ink)}
+.proj a.code{font-size:15px;font-weight:500}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px 40px}
+.skills h3{font-size:17px;margin-bottom:6px}
+.skills p{color:var(--muted);font-size:16px}
+
+/* background */
+.bg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.bg h3{font-size:19px}
+.bg .when{color:var(--muted);font-size:15px;margin:4px 0 8px}
+.grades{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px;font-size:15px;color:var(--muted)}
+.grades b{color:var(--ink);font-weight:500}
+
+footer{padding:72px 0 56px}
+footer h2{font-size:34px;margin-bottom:12px}
+footer p{color:var(--muted);margin-bottom:24px;max-width:560px}
+.small{font-size:14px;color:var(--muted);margin-top:48px}
+
+@media (max-width:760px){
+  body{font-size:16px}
+  nav ul{gap:14px}
+  nav ul li.hide-sm{display:none}
+  .hero{padding:48px 0}
+  .hero p.lead{font-size:18px}
+  section{padding:56px 0}
+  .proj{grid-template-columns:1fr;gap:10px}
+  .facts{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <nav aria-label="Main">
+    <a class="home" href="#top">Shiraz Velber</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li class="hide-sm"><a href="#skills">Skills</a></li>
+      <li class="hide-sm"><a href="#background">Background</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <p class="role">Software Engineer</p>
+      <h1>Shiraz<br>Velber</h1>
+      <p class="lead">I build backend systems and web apps with Java and Node.js, with a focus on security and AI. B.Sc. in Software Engineering from Afeka College, specializing in cybersecurity.</p>
+      <div class="actions">
+        <a class="btn primary" href="Shiraz_Velber_CV.pdf" download>Download CV</a>
+        <a class="btn ghost" href="https://github.com/Shiraz1124">GitHub</a>
+        <a class="btn ghost" href="mailto:shirazwelber1124@gmail.com">Email me</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="intro">Projects from my degree. Each links to its code on GitHub.</p>
+
+      <article class="feature">
+        <div>
+          <h3>SafeDLBuddy</h3>
+          <p class="meta">Final degree project, 2024–2025, grade 92</p>
+          <p>Paste a link to a download page and SafeDLBuddy tells you whether the file is safe. It finds the real file behind the page, downloads it to temporary storage, scans it with three antivirus engines, combines their results into one risk score, and uses GPT to explain the verdict in plain language. The file is deleted once the scan is done.</p>
+        </div>
+
+        <figure class="pipe">
+          <svg viewBox="0 0 880 210" role="img" aria-label="How SafeDLBuddy works: a link goes to Playwright, which downloads the file; the file is scanned by Bytescale, Cloudmersive and ClamAV; their results become a weighted risk score; GPT explains the verdict to the user.">
+            <!-- link -->
+            <rect class="box" x="4" y="78" width="118" height="54" rx="7"/>
+            <text class="lbl" x="63" y="101" text-anchor="middle">Download link</text>
+            <text class="sm" x="63" y="119" text-anchor="middle">from the user</text>
+            <path class="ln" d="M122 105 H156"/>
+            <!-- playwright -->
+            <rect class="box" x="158" y="78" width="140" height="54" rx="7"/>
+            <text class="lbl" x="228" y="101" text-anchor="middle">Find &amp; download</text>
+            <text class="sm" x="228" y="119" text-anchor="middle">Playwright, 8 sources</text>
+            <path class="ln" d="M298 105 H322 M322 35 V175 M322 35 H346 M322 105 H346 M322 175 H346"/>
+            <!-- engines -->
+            <rect class="box" x="348" y="12" width="150" height="46" rx="7"/>
+            <text class="lbl" x="423" y="33" text-anchor="middle">Cloudmersive</text>
+            <text class="sm" x="423" y="49" text-anchor="middle">37% weight</text>
+            <rect class="box" x="348" y="82" width="150" height="46" rx="7"/>
+            <text class="lbl" x="423" y="103" text-anchor="middle">Bytescale</text>
+            <text class="sm" x="423" y="119" text-anchor="middle">34% weight</text>
+            <rect class="box" x="348" y="152" width="150" height="46" rx="7"/>
+            <text class="lbl" x="423" y="173" text-anchor="middle">ClamAV</text>
+            <text class="sm" x="423" y="189" text-anchor="middle">29% weight</text>
+            <path class="ln" d="M498 35 H522 M498 105 H522 M498 175 H522 M522 35 V175 M522 105 H546"/>
+            <!-- score -->
+            <rect class="boxb" x="548" y="70" width="152" height="70" rx="7"/>
+            <text class="lbl" x="624" y="96" text-anchor="middle">Weighted risk score</text>
+            <text class="sm" x="624" y="114" text-anchor="middle">weights shift if an</text>
+            <text class="sm" x="624" y="129" text-anchor="middle">engine is down</text>
+            <path class="ln" d="M700 105 H734"/>
+            <!-- gpt -->
+            <rect class="box" x="736" y="78" width="140" height="54" rx="7"/>
+            <text class="lbl" x="806" y="101" text-anchor="middle">GPT explanation</text>
+            <text class="sm" x="806" y="119" text-anchor="middle">verdict in plain words</text>
+          </svg>
+          <figcaption>Engine weights come from a six-factor comparison (detection rate, reliability, cost, speed, features, integration). If an engine fails, its share is spread across the others so the score stays valid.</figcaption>
+        </figure>
+
+        <div class="facts">
+          <div><b>3</b>Dockerized services, deployed on Azure</div>
+          <div><b>~75</b>Jest tests: functional, integration, security, load</div>
+          <div><b>8</b>download handlers, incl. Google Drive, Dropbox, MEGA, torrents</div>
+        </div>
+        <div class="stack"><span>Node.js</span><span>Express</span><span>Vue.js</span><span>Playwright</span><span>OpenAI API</span><span>Docker</span><span>Azure</span><span>Jest</span></div>
+        <a class="code" href="https://github.com/Shiraz1124/Final_project">View code on GitHub</a>
+      </article>
+
+      <div class="list">
+        <article class="proj">
+          <div>
+            <h3>AI Trip Planner</h3>
+            <p class="kind">Full-stack web app</p>
+          </div>
+          <div>
+            <p>Plans a trip route between places you choose. GPT suggests stops and writes route descriptions based on real Google Maps data, the route is drawn on an interactive map with weather forecasts, and each destination gets an image generated by DALL·E 3. Users sign in, save trips and see trip statistics.</p>
+            <div class="stack"><span>React</span><span>Tailwind CSS</span><span>Leaflet</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>OpenAI API</span><span>Google Maps API</span><span>JWT</span></div>
+            <a class="code" href="https://github.com/Shiraz1124/Web_App_Project">View code on GitHub</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div>
+            <h3>SQL Injection &amp; XSS: vulnerable vs. secure</h3>
+            <p class="kind">Cybersecurity project</p>
+          </div>
+          <div>
+            <p>The same user management app built twice: once with real SQL injection and XSS vulnerabilities, and once with them fixed using parameterized queries and safe rendering. The secure version adds BCrypt password hashing, a password policy with history and lockout after three failed logins, and password reset by email.</p>
+            <div class="stack"><span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>React</span><span>BCrypt</span></div>
+            <a class="code" href="https://github.com/Shiraz1124/Cyber_project">View code on GitHub</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div>
+            <h3>LightSync</h3>
+            <p class="kind">Team project, backend</p>
+          </div>
+          <div>
+            <p>Backend for a smart lighting system: a REST API with about 20 endpoints, separate permissions for admins, operators and end users, and paginated search. Covered by more than 70 JUnit tests.</p>
+            <div class="stack"><span>Java</span><span>Spring Boot</span><span>Spring Data JPA</span><span>PostgreSQL</span><span>Docker</span><span>JUnit</span></div>
+            <a class="code" href="https://github.com/Shiraz1124/LightSync-project">View code on GitHub</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div>
+            <h3>E-commerce test automation</h3>
+            <p class="kind">QA project</p>
+          </div>
+          <div>
+            <p>Automated browser tests for an online store: product search, in-stock and out-of-stock items, the shopping cart, the price filter and shipping options. Built with the Page Object Model, with test data in JSON files and logging with Log4j2.</p>
+            <div class="stack"><span>Java</span><span>Selenium WebDriver</span><span>JUnit</span><span>Maven</span></div>
+            <a class="code" href="https://github.com/Shiraz1124/Selenium_project">View code on GitHub</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="intro">Tools I have used in the projects above and in my coursework.</p>
+      <div class="skills">
+        <div><h3>Languages</h3><p>Java, JavaScript, C, SQL, Assembly, Python</p></div>
+        <div><h3>Backend</h3><p>Spring Boot, Spring Security, Hibernate/JPA, Node.js, Express, REST APIs</p></div>
+        <div><h3>Frontend</h3><p>React, Vue.js, Tailwind CSS</p></div>
+        <div><h3>Data</h3><p>PostgreSQL, MongoDB</p></div>
+        <div><h3>AI</h3><p>OpenAI API, prompt design, structured JSON output, DALL·E 3</p></div>
+        <div><h3>Security</h3><p>SQL injection and XSS prevention, BCrypt, JWT, Wireshark</p></div>
+        <div><h3>Testing</h3><p>Jest, JUnit, Selenium, Playwright</p></div>
+        <div><h3>DevOps &amp; HPC</h3><p>Docker, Azure, Linux, Git, CUDA, MPI, OpenMP</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="background">
+    <div class="wrap">
+      <h2>Background</h2>
+      <p class="intro">Education and service.</p>
+      <div class="bg">
+        <div>
+          <h3>B.Sc. in Software Engineering</h3>
+          <p class="when">Afeka College of Engineering, 2021–2025</p>
+          <p>Specialization in cybersecurity.</p>
+          <div class="grades"><span>Embedded Systems <b>100</b></span><span>QA <b>97</b></span><span>HCI <b>96</b></span><span>Parallel Computing <b>95</b></span><span>Compilation <b>94</b></span><span>Statistics <b>92</b></span></div>
+        </div>
+        <div>
+          <h3>Practical Engineer in Electronics</h3>
+          <p class="when">Afeka College of Engineering, 2015–2017</p>
+        </div>
+        <div>
+          <h3>RF Technician, IDF</h3>
+          <p class="when">Maintenance Unit, Tzrifin Base, 2017–2019</p>
+          <p>Maintained and tested military electronic systems. Completed a radar and meteorology course. Used SAP for technical documentation and operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>I'm looking for a backend, full-stack or AI engineering role. Based in Rishon LeZion, Israel. Hebrew native, English advanced.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:shirazwelber1124@gmail.com">shirazwelber1124@gmail.com</a>
+      <a class="btn ghost" href="https://github.com/Shiraz1124">GitHub</a>
+      <a class="btn ghost" href="Shiraz_Velber_CV.pdf" download>Download CV</a>
+    </div>
+    <p class="small">© 2026 Shiraz Velber</p>
+  </div>
+</footer>
+
+</body>
+</html>
